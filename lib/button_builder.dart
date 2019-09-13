@@ -99,7 +99,7 @@ class SignInButtonBuilder extends StatelessWidget {
                     ),
                     const SizedBox(width: 16.0),
                     Expanded(
-                      child: Row(
+                      child: Column(
                         children: <Widget>[
                           Text(
                             text,

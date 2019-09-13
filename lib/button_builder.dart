@@ -83,7 +83,7 @@ class SignInButtonBuilder extends StatelessWidget {
           : Container(
               constraints: BoxConstraints(
                 maxWidth: width ?? MediaQuery.of(context).size.width / 1.5,
-                minHeight: 40.0,
+                maxHeight: 40.0,
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,

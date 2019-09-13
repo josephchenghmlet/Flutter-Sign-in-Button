@@ -85,40 +85,36 @@ class SignInButtonBuilder extends StatelessWidget {
                 maxWidth: width ?? MediaQuery.of(context).size.width / 1.5,
                 minHeight: 40.0,
               ),
-              child: Center(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      // padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 20),
-                      padding: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
-                      child: Icon(
-                        icon,
-                        color: Colors.white,
-                      ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    // padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 20),
+                    padding: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
+                    child: Icon(
+                      icon,
+                      color: Colors.white,
                     ),
-                    const SizedBox(width: 16.0),
-                    Expanded(
-                      child: Column(
-                        children: <Widget>[
-                          Text(
-                            text,
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              color: textColor,
-                            ),
-                            textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(width: 16.0),
+                  Expanded(
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          text,
+                          style: TextStyle(
+                            fontFamily: 'Roboto',
+                            color: textColor,
                           ),
-                        ],
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                      ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
                     ),
-                  ],
-                  // mainAxisAlignment: MainAxisAlignment.start,
-                  // mainAxisSize: MainAxisSize.max,
-                ),
+                  ),
+                ],
               ),
             ),
       shape: shape ?? ButtonTheme.of(context).shape,

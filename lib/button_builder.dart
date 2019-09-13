@@ -35,6 +35,8 @@ class SignInButtonBuilder extends StatelessWidget {
   /// width is default to be 1/1.5 of the screen
   final double width;
 
+  final bool iconOnly;
+
   /// The constructor is self-explanatory.
   SignInButtonBuilder({
     Key key,
@@ -49,6 +51,7 @@ class SignInButtonBuilder extends StatelessWidget {
     this.elevation = 2.0,
     this.shape,
     this.width = null,
+    this.iconOnly = false,
   })  : assert(text != null),
         assert(icon != null),
         assert(textColor != null),
@@ -80,26 +83,40 @@ class SignInButtonBuilder extends StatelessWidget {
           : Container(
               constraints: BoxConstraints(
                 maxWidth: width ?? MediaQuery.of(context).size.width / 1.5,
+                minHeight: 40.0,
               ),
               child: Center(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 20),
+                      // padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 20),
+                      padding: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
                       child: Icon(
                         icon,
                         color: Colors.white,
                       ),
                     ),
-                    Text(
-                      text,
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        color: textColor,
+                    const SizedBox(width: 16.0),
+                    Expanded(
+                      child: Row(
+                        children: <Widget>[
+                          Text(
+                            text,
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              color: textColor,
+                            ),
+                          ),
+                        ],
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
                       ),
                     ),
                   ],
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
                 ),
               ),
             ),
